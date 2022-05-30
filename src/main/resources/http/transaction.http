@@ -1,0 +1,36 @@
+POST http://localhost:8080/transaction/create
+Content-Type:application/json
+Authorization: Basic bank bankjon
+
+{
+  "fromCard" : "8a8a81ba81131dc30181131e804e0000",
+  "toCard" : "8a8a81ba81131dc30181131e8f920001",
+  "amount" : 10000,
+  "status" : "ACTIVE"
+}
+
+###
+GET http://localhost:8080/transaction/pagination/cardId/list/8a8a81ba811310e40181131616870003
+Authorization: Basic client clientjon
+
+###
+GET http://localhost:8080/transaction/pagination/clientId/8a8a81af8103a4d7018103a576f50000
+Authorization: Basic client clientjon
+
+###
+GET http://localhost:8080/transaction/pagination/clientId/phone/+998904091412
+Authorization: Basic client clientjon
+
+###
+GET http://localhost:8080/transaction/pagination/clientId/list/profile
+Authorization: Basic client clientjon
+
+###
+POST http://localhost:8080/transaction/filter
+Content-Type:application/json
+Authorization: Basic bank bankjon
+
+{
+  "cardId" : "8a8a81ba81131dc30181131e804e0000",
+  "status" : "ACTIVE"
+}

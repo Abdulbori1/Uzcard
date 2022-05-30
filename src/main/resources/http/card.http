@@ -1,0 +1,64 @@
+POST http://localhost:8080/card/bank/create
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "number" : "860048921068",
+  "expiredDate" : 2,
+  "phone" : "+998904091412",
+  "status" : "ACTIVE",
+  "client" : "8a8a812080fee85c0180fee8f0090000",
+  "profile_name" : "profile"
+}
+
+###
+PUT http://localhost:8080/card/bank/status/8a8a81ba811307760181130793010000
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "number" : 1200,
+  "expiredDate" : 2,
+  "phone" : "+998904091479",
+  "status" : "ACTIVE",
+  "client" : "8a8a812080fee85c0180fee8f0090000",
+  "profile_name" : "profile"
+}
+
+###
+PUT http://localhost:8080/card/bank/phone/8a8a81ba811307760181130793010000
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "phone" : "+998904091479"
+}
+
+###
+GET http://localhost:8080/card/any/List/phone/+998904091479
+Authorization: Basic bank bankjon
+
+###
+GET http://localhost:8080/card/any/List/clientId/8a8a81ba811307760181130793010000
+
+###
+GET http://localhost:8080/card/any/List/number/860048921068
+
+###
+GET http://localhost:8080/card/any/balance/860048921068
+Authorization: Basic bank bankjon
+
+###
+POST http://localhost:8080/card/filter
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "clientId" : "8a8a81ba811302e501811304fd520000",
+  "cardNumber" : "860048921068",
+  "cardId" : "8a8a81ba811307760181130793010000",
+  "fromBalance" : 0,
+  "toBalance" : 0,
+  "profile_name" : "bank",
+  "status" : "ACTIVE"
+}

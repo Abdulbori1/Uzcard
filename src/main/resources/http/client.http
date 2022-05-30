@@ -1,0 +1,53 @@
+POST http://localhost:8080/client/create
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "name" : "Ali",
+  "surname" : "Aliyev",
+  "middleName" : "Aliyevich",
+  "phone" : "+998904091478",
+  "status" : "ACTIVE",
+  "profileName" : "profile"
+}
+
+###
+PUT http://localhost:8080/client/+998904091478
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "name" : "Ali",
+  "surname" : "Aliyev",
+  "middleName" : "Aliyevich",
+  "status" : "ACTIVE"
+}
+
+###
+PUT http://localhost:8080/client/status/+998904091478
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "status" : "ACTIVE"
+}
+
+###
+PUT http://localhost:8080/client/phone/+998904091479
+Content-Type: application/json
+Authorization: Basic bank bankjon
+
+{
+  "phone" : "+998904091478"
+}
+
+###
+GET http://localhost:8080/client/list
+Authorization: Basic admin adminjon
+
+###
+GET http://localhost:8080/client/+998904091478
+Authorization: Basic bank bankjon
+
+###
+GET http://localhost:8080/client/profile/list
